@@ -1,5 +1,6 @@
 <?php
     require_once('filme.php');
+    $address = getAddress();
 ?>
 
 <!DOCTYPE html>
@@ -13,15 +14,16 @@
 <body>
     <form action="." method="POST">
         <p>Digite o nome do Filme.</p>
-        <input type="text" placeholder="Filme..." name="nomefilme" value="<?php echo $address->Title ?>">
+        <input type="text" placeholder="Filme..." name="nomefilme" value="<?php echo $address->Search[0]->Title . " " . $address->Search[1]->Title ?? "" ?>">
         <input value= "Procurar" type="submit">
-        <input type="text" value= "<?php echo $address->Year ?>">
-        <input type="text" value= "<?php echo $address->Genre ?>">
-        <input type="text" value= "<?php echo $address->Runtime ?>">
-        <input type="text" value= "<?php echo $address->Director ?>">
-        <input type="image" name="capa" value="<?php echo $address->Poster ?>">
+        <p>Ano:</p>
+        <input type="text" name="ano" value= "<?php echo $address->Search[0]->Year ?? "" ?>  ">
+        <p>Tipo</p>
+        <input type="text" name="tipo" value= "<?php echo $address->Search[0]->Type ?? "" ?>">
+        <img src="<?php echo $address->Search[0]->Poster ?? "" ?>" width="140px">
     </form>
 
    
 </body>
 </html>
+
