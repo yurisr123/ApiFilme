@@ -6,17 +6,11 @@ if (isset ($_POST['nomefilme'])){
     $filme = $_POST['nomefilme'];
     
     $address = getAddressomdbapi($filme);
-
-  
-}
-
-else 
-{
-   $address = addressEmpty();
+ 
+}else {
+    $address = addressEmpty();
 
 }
-
-
 
 return $address;
 }
@@ -36,6 +30,3 @@ function getAddressomdbapi(String $filme){
 
   
 }
-
-
-
