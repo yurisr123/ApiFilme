@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+body{
+ 
+ background-image: url("img/fita.png");
+ background-repeat:repeat;
+ padding: 40px;
+
+ 
+
+}
+
+.Titulo{
+    color:white;
+    font: normal 30pt Arial;
+
+
+}
+.container{
+    border: solid 5px red;
+    background-color: black;
+    padding-bottom: 50px;
+
+
+}
+
+.p_article{
+    font-size: 24px;
+    color:white;
+}
+
+.p_article_2{
+    font-size: 14px;
+    color:rgb(255, 0, 0);
+}

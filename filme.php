@@ -1,32 +1,42 @@
 <?php 
-function getAddress(){
+function getFilme(){
 
 
 if (isset ($_POST['nomefilme'])){
     $filme = $_POST['nomefilme'];
     
-    $address = getAddressomdbapi($filme);
+    $address = getFilmeomdbapi($filme);
+   
  
 }else {
-    $address = addressEmpty();
-
+    $address = FilmeEmpty();
+   
 }
 
 return $address;
+
+
 }
 
-function addressEmpty(){
+function FilmeEmpty(){
     return (object)[
         'Title' => '',
         'Year' => '',
+        'Runtime' => '',
         'Type' => '',
         'Poster' => ''
     ];
 }
 
-function getAddressomdbapi(String $filme){
-    $url = "https://www.omdbapi.com/?s={$filme}&apikey=7a6ed400";
+
+
+function getFilmeomdbapi(String $filme){
+   
+    
+    $url = "https://www.omdbapi.com/?t={$filme}&apikey=7a6ed400";
     return json_decode(file_get_contents($url));
 
-  
 }
+
+
+
